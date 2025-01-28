@@ -4,6 +4,10 @@ IIS Short Name Scanner - 2012-2023 & Still Giving...
 ## Generador de diccionario
 https://github.com/Anonimo501/wordsearch
 
+Descargar JAVA:
+
+https://ubuntuhandbook.org/index.php/2022/03/install-jdk-18-ubuntu/
+
 Installation
 --------------
 
