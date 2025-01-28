@@ -1,37 +1,8 @@
 IIS Short Name Scanner - 2012-2023 & Still Giving...
-https://github.com/Anonimo501/wordsearch
 =====================
 
-Latest presentation: 
-* [Beyond Microsoft IIS Short File Name Disclosure](/presentation/Steelcon-2023-Beyond_Microsoft_IIS_Short_File_Name_Disclosure.pdf)
-
-Latest blog post:
-* https://soroush.me/blog/2023/07/thirteen-years-on-advancing-the-understanding-of-iis-short-file-name-sfn-disclosure/
-
-I recommended everyone to try @bitquark's new tool in Go before trying this old tool: https://github.com/bitquark/shortscan
-
-The latest version of scanner for IIS short file name (8.3) disclosure vulnerability by using the tilde (~) character. This issue has been discovered in 2010 but has been evolved a few times since.
-
-This is an old tool and the code is a spaghetti, but it is capable to tackle even the latest IIS (IIS 10 on Windows Server 2022 at the time of writing this)! It has recently been updated, so it can support sending custom HTTP methods without reflection hacks in Java. However, some awesome researchers have tried to reimplement this tool using other technologies such as in Go, and when they become mature, they probably work better than this.
-
-Description
--------------
-
-Microsoft IIS contains a flaw that may lead to an unauthorized information disclosure. The issue is triggered during the parsing of a request that contains a tilde character (~). This may allow a remote attacker to gain access to file and folder name information.
-
-This scanner was moved from https://code.google.com/p/iis-shortname-scanner-poc/ to GitHub for better support.
-
-Original research file: http://soroush.secproject.com/downloadable/microsoft_iis_tilde_character_vulnerability_feature.pdf
-
-It is possible to detect short names of files and directories which have an 8.3 equivalent in Windows by using some vectors in several versions of Microsoft IIS. For instance, it is possible to detect all short-names of ".aspx" files as they have 4 letters in their extensions.
-
-Note: new techniques have been introduced to the latest versions of this scanner, and it can now scan IIS10 when it is vulnerable. 
-
-It is not easy to find the original file or folder names based on the short names. However, the following methods are recommended as examples:
-- If you can guess the full extension (for instance .ASPX when the 8.3 extension is .ASP), always try the short name with the full extension.
-- Sometimes short names are listed in Google which can be used to find the actual names
-- Using text dictionary files is also recommended. If a name starts with another word, the second part should be guessed based on a dictionary file separately. For instance, ADDACC~1.ASP can be AddAccount.aspx, AddAccounts.aspx, AddAccurateMargine.aspx, etc
-- Searching in the website contents and resources can also be useful to find the full name. This can be achieved for example by searching Site Map in the Burp Suite tool.
+## Generador de diccionario
+https://github.com/Anonimo501/wordsearch
 
 Installation
 --------------
